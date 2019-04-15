@@ -30,7 +30,6 @@ img {
 *,
 *:before,
 *:after {
-  content: "";
   box-sizing: border-box;
   margin: 0;
 }
