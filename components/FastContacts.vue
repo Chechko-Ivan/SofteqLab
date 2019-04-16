@@ -7,8 +7,30 @@
             <svg
               class="fast-contacts_icon"
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
+              width="20px"
               height="20px"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M256 0C153.755 0 70.573 83.182 70.573 185.426c0 126.888 165.94 313.167 173.004 321.035 6.636 7.39 18.222 7.378 24.846 0 7.065-7.868 173.004-194.147 173.004-321.035C441.425 83.182 358.244 0 256 0zm0 278.72c-51.442 0-93.292-41.85-93.292-93.293S204.56 92.134 256 92.134s93.29 41.85 93.29 93.293S307.44 278.72 256 278.72z"
+              ></path>
+            </svg>
+          </div>
+          <div class="fast-contacts_item-right">
+            <h4 class="fast-contacts_item-title">Visit us</h4>
+            <span class="fast-contacts_item-text">
+              <nuxt-link to="/">123 Manhattan address name, Los Algeles</nuxt-link>
+            </span>
+          </div>
+        </li>
+
+        <li class="fast-contacts_item">
+          <div class="fast-contacts_item-left">
+            <svg
+              class="fast-contacts_icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="20px"
+              width="20px"
               viewBox="0 0 348.077 348.077"
             >
               <path
@@ -17,8 +39,34 @@
             </svg>
           </div>
           <div class="fast-contacts_item-right">
-            <h4 class="fast-contacts_item-title">Visit us</h4>
-            <span class="fast-contacts_item-address">123 Manhattan address name, Los Algeles</span>
+            <h4 class="fast-contacts_item-title">Phone</h4>
+            <span class="fast-contacts_item-text">
+              Phone :
+              <a href="tel:+(012) 345 6789">(012) 345 6789</a>
+            </span>
+          </div>
+        </li>
+
+        <li class="fast-contacts_item">
+          <div class="fast-contacts_item-left">
+            <svg
+              class="fast-contacts_icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="20px"
+              width="20px"
+              viewBox="0 0 382.117 382.117"
+            >
+              <path
+                d="M336.764 45.945h-291.4C20.346 45.945 0 65.484 0 89.5v203.117c0 24.016 20.346 43.555 45.354 43.555h291.4c25.008 0 45.353-19.54 45.353-43.555V89.5c0-24.016-20.345-43.555-45.353-43.555zm0 251.775h-291.4c-3.676 0-6.9-2.384-6.9-5.103V116.36L170.25 227.63c2.702 2.282 6.138 3.538 9.676 3.538l22.26.001c3.536 0 6.974-1.257 9.677-3.54l131.803-111.274V292.62c-.002 2.717-3.227 5.1-6.902 5.1zM191.06 192.987L62.87 84.397h256.378l-128.19 108.6z"
+              ></path>
+            </svg>
+          </div>
+          <div class="fast-contacts_item-right">
+            <h4 class="fast-contacts_item-title">Work with us?</h4>
+            <span class="fast-contacts_item-text">
+              Email :
+              <a href="mailto:info@softeqlab.by">info@softeqlab.by</a>
+            </span>
           </div>
         </li>
       </ul>
@@ -41,14 +89,15 @@ export default {};
 
   &_wrapper {
     max-width: 100%;
-    padding: 0 15px;
+    padding: 0 vw(90px);
     margin: 0 auto;
-    background: green;
   }
 
   &_list {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-between;
     text-indent: 0;
     list-style: none;
     list-style-position: outside;
@@ -56,14 +105,68 @@ export default {};
 
   &_item {
     display: flex;
+    width: vw(240px);
+
+    @media (max-width: $screen-lg) {
+      width: 150px;
+    }
   }
 
   &_item-left {
-    background-color: tomato;
+    padding-right: vw(25px);
   }
 
   &_icon {
     fill: $text-lighter;
+
+    @media (max-width: $screen-xl) {
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  &_item-title {
+    font-size: em(17px);
+    text-transform: uppercase;
+    color: $text-dark;
+    font-weight: 300;
+    letter-spacing: 2px;
+
+    @media (max-width: $screen-xl) {
+      font-size: 10px;
+    }
+
+    @media (max-width: $screen-sm) {
+      font-size: 8px;
+    }
+  }
+
+  &_item-text {
+    margin-top: vh(18px);
+    display: block;
+    font-weight: 300;
+    font-size: em(14px);
+    color: $text-lighten;
+
+    @media (max-width: $screen-xxl) {
+      font-size: 12px;
+      margin-top: vh(10px);
+    }
+
+    @media (max-width: $screen-xl) {
+      font-size: 8px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.3s ease;
+
+      &:hover,
+      &:focus {
+        color: $accent-light;
+      }
+    }
   }
 }
 </style>
