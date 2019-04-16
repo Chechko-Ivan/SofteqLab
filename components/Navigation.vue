@@ -141,7 +141,7 @@ export default {
         }
 
         &-text {
-          top: -23px;
+          top: -26px;
         }
       }
     }
@@ -195,7 +195,7 @@ export default {
         }
 
         &-text {
-          top: -23px;
+          top: -26px;
         }
       }
     }
@@ -253,7 +253,7 @@ export default {
         }
 
         &-text {
-          bottom: -40px;
+          bottom: -13px;
 
           @media (max-width: $screen-sm) {
             bottom: -7px;
@@ -322,7 +322,7 @@ export default {
         }
 
         &-text {
-          bottom: -40px;
+          bottom: -13px;
 
           @media (max-width: $screen-sm) {
             bottom: -7px;
@@ -354,9 +354,9 @@ export default {
     &:nth-child(n + 3):nth-child(-n + 4) {
       .navigation_link {
         &-box {
-          height: 65px;
-          bottom: 56%;
-          margin-bottom: -60px;
+          height: 40px;
+          bottom: 59%;
+          margin-bottom: -40px;
 
           @media (max-width: $screen-sm) {
             bottom: 59%;
