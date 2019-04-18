@@ -114,6 +114,10 @@ export default {};
 
   &_item-left {
     padding-right: vw(25px);
+
+    @media (max-width: $screen-sm) {
+      padding-right: 10px;
+    }
   }
 
   &_icon {
@@ -122,6 +126,11 @@ export default {};
     @media (max-width: $screen-xl) {
       width: 13px;
       height: 13px;
+    }
+
+    @media (max-width: $screen-sm) {
+      width: 10px;
+      height: 10px;
     }
   }
 
@@ -137,7 +146,7 @@ export default {};
     }
 
     @media (max-width: $screen-sm) {
-      font-size: 8px;
+      font-size: 7px;
     }
   }
 
@@ -155,6 +164,11 @@ export default {};
 
     @media (max-width: $screen-xl) {
       font-size: 8px;
+    }
+
+    @media (max-width: $screen-sm) {
+      margin-top: vh(5);
+      font-size: 7px;
     }
 
     a {

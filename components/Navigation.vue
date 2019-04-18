@@ -437,13 +437,13 @@ export default {
       text-transform: uppercase;
       letter-spacing: -1px;
 
-      @media (max-width: $screen-sm) {
-        font-size: vw(41px);
-      }
-
       @media (max-width: $screen-md) {
         font-size: vw(22px);
         letter-spacing: -0.5px;
+      }
+
+      @media (max-width: $screen-sm) {
+        font-size: 9px;
       }
 
       &::after {
