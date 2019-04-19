@@ -175,6 +175,7 @@ img {
     width: 50%;
     // background-color: green;
     border-left: 1px solid tomato;
+    overflow: scroll;
 
     &::after,
     &::before {
