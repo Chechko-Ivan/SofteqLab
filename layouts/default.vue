@@ -31,7 +31,7 @@ export default {
       currentNavigation: {
         firstLink: {
           text: "О нас",
-          url: "/about"
+          url: "/"
         },
         secondLink: {
           text: "Услуги",
@@ -56,6 +56,19 @@ export default {
 </script>
 
 <style lang="scss">
+.page-enter-active,
+.page-leave-active {
+  transition-duration: 0.5s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+  transform: translate(2em, 0);
+}
+
 html {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -127,7 +140,7 @@ img {
       bottom: 0;
       left: 0;
       width: vw(340px);
-      height: vh(340px);
+      height: vw(340px);
       z-index: -1;
       background-image: url("../static/decoration-el.png");
     }
@@ -174,7 +187,6 @@ img {
     position: relative;
     width: 50%;
     // background-color: green;
-    border-left: 1px solid tomato;
     overflow: scroll;
 
     &::after,

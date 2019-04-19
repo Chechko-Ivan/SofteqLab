@@ -38,6 +38,9 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
-    }
-  }
+    },
+    vendor: ["aos"]
+  },
+  plugins: [{ src: "~/plugins/aos", ssr: false }],
+  css: ["aos/dist/aos.css"]
 };

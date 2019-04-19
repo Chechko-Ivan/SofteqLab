@@ -26,9 +26,14 @@ export default {
   color: $text-dark;
   font-size: 14px;
   text-transform: uppercase;
+  text-decoration: none;
 
   &:not(:last-of-type) {
     margin-right: vw(30px);
+
+    @media (max-width: $screen-sm) {
+      margin-right: vw(80px);
+    }
   }
 
   &:hover,
