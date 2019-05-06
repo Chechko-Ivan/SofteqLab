@@ -2,7 +2,7 @@
   <div class="breadcrumbs">
     <div class="breadcrumbs_wrapper">
       <ul class="breadcrumbs_list">
-        <li class="breadcrumbs_item">
+        <li class="breadcrumbs_item" data-aos="zoom-out" data-aos-delay="1400">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -14,10 +14,17 @@
             ></path>
           </svg>
         </li>
-        <li class="breadcrumbs_item">
-          <nuxt-link to="/">На главную</nuxt-link>
+        <li
+          v-for="(crumbs, index) in crumbsList"
+          :key="index"
+          class="breadcrumbs_item"
+          data-aos="zoom-out"
+          :data-aos-delay="crumbs.delay"
+        >
+          <nuxt-link v-if="crumbs.link" :to="crumbs.link">{{crumbs.text}}</nuxt-link>
+          <span v-else>{{crumbs.text}}</span>
         </li>
-        <li class="breadcrumbs_item">О нас</li>
+        <!-- <li class="breadcrumbs_item">О нас</li> -->
       </ul>
     </div>
   </div>
@@ -26,8 +33,11 @@
 <script>
 export default {
   name: "breadcrumbs",
-  data() {
-    return {};
+  props: {
+    crumbsList: {
+      type: Array,
+      default: () => []
+    }
   }
 };
 </script>
@@ -60,6 +70,10 @@ export default {
     &:not(:last-of-type) {
       padding-right: 55px;
 
+      @media (max-width: $screen-sm) {
+        padding-right: 35px;
+      }
+
       &::after {
         content: "";
         position: absolute;
@@ -68,6 +82,10 @@ export default {
         width: 40px;
         height: 1px;
         background-color: $line;
+
+        @media (max-width: $screen-sm) {
+          width: 20px;
+        }
       }
 
       &::before {
@@ -80,6 +98,10 @@ export default {
         top: 50%;
         width: 5px;
         height: 5px;
+
+        @media (max-width: $screen-sm) {
+          transform: translateY(-35%);
+        }
       }
     }
 

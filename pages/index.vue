@@ -1,11 +1,11 @@
 <template>
   <main class="inner-page">
     <div class="inner-page_wrapper">
-      <!-- <span class="inner-page_big-title">Кто мы</span> -->
+      <div class="inner-page_big-title" data-aos="zoom-out" data-aos-delay="500">Кто мы</div>
       <div class="inner-page_header">
-        <breadcrumbs></breadcrumbs>
+        <breadcrumbs :crumbsList="breadcrumbs"></breadcrumbs>
         <div class="inner-page_main-title-wrapper">
-          <div class="inner-page_main-title-decor" data-aos="slide-right"></div>
+          <div class="inner-page_main-title-decor" data-aos="fade-right" data-aos-delay="100"></div>
           <h1
             class="inner-page_main-title"
             data-aos="zoom-out-left"
@@ -28,8 +28,13 @@
               data-aos-delay="300"
             >DON KATZ, FOUNDER AND CEO, AUDIBLE JULY 30, 1996</address>
             <div class="inner-page_content-header_link">
-              <base-link url="/" text="Услуги" data-aos="zoom-in" data-aos-delay="550"></base-link>
-              <base-link url="/" text="Обратная связь" data-aos="zoom-in" data-aos-delay="650"></base-link>
+              <base-link url="/services" text="Услуги" data-aos="zoom-in" data-aos-delay="550"></base-link>
+              <base-link
+                url="/feedback"
+                text="Обратная связь"
+                data-aos="zoom-in"
+                data-aos-delay="650"
+              ></base-link>
             </div>
           </div>
 
@@ -37,7 +42,11 @@
             <div class="inner-page_content-main-wrapper">
               <div class="inner-page-about_left">
                 <h2 class="inner-page-about-title">
-                  <div class="inner-page_main-title-decor"></div>
+                  <div
+                    class="inner-page_main-title-decor"
+                    data-aos="fade-right"
+                    data-aos-delay="650"
+                  ></div>
                   <span data-aos="fade-up" data-aos-delay="700">НАША ПРОДУКЦИЯ</span>
                   <div data-aos="fade-up" data-aos-delay="750">КАЧЕСТВО</div>
                 </h2>
@@ -78,7 +87,19 @@ export default {
   },
   data() {
     return {
-      aboutImage
+      aboutImage,
+      breadcrumbs: [
+        // {
+        //   text: "На главную",
+        //   link: "/",
+        //   delay: "1600"
+        // },
+        {
+          text: "О нас",
+          link: null,
+          delay: "1600"
+        }
+      ]
     };
   }
 };
@@ -92,7 +113,8 @@ export default {
 .inner-page {
   &_big-title {
     position: absolute;
-    top: vh(130px);
+    line-height: 0;
+    top: vh(200px);
     left: 0;
     font-weight: 800;
     font-size: 175px;
@@ -110,8 +132,17 @@ export default {
     }
   }
 
+  &_wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
   &_header {
     margin-left: vw(175px);
+
+    @media (max-width: $screen-sm) {
+      margin-left: vw(100px);
+    }
   }
 
   &_main-title-wrapper {
@@ -249,6 +280,10 @@ export default {
       width: 100%;
       padding: 0 10px;
       margin: 0 auto;
+
+      @media (max-width: $screen-sm) {
+        max-width: 95%;
+      }
     }
   }
 
@@ -323,6 +358,10 @@ export default {
       font-size: 30px;
     }
 
+    @media (max-width: $screen-sm) {
+      padding-left: 30px;
+    }
+
     .inner-page_main-title-decor {
       left: -70px;
 
@@ -332,8 +371,7 @@ export default {
 
       @media (max-width: $screen-sm) {
         width: 25px;
-
-        left: -30px;
+        left: -10px;
       }
 
       &::after {
@@ -344,12 +382,13 @@ export default {
         }
 
         @media (max-width: $screen-sm) {
-          transform: translateY(-55%);
+          transform: translateY(-45%);
         }
       }
     }
 
     span {
+      margin-bottom: vh(25px);
       font-size: 17px;
       font-weight: 400;
       letter-spacing: 2px;
@@ -388,11 +427,24 @@ export default {
       position: absolute;
       width: 100%;
       height: 100%;
-      top: vh(-30px);
-      right: vw(-65px);
+      top: 0;
+      right: 0;
       background-image: $gradient;
       z-index: -1;
+      animation-delay: 1s;
+      animation-name: animateImageAbout;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
     }
+  }
+}
+
+@keyframes animateImageAbout {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(vw(65px), vh(-30px));
   }
 }
 </style>

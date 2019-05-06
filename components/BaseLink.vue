@@ -27,6 +27,7 @@ export default {
   font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
+  z-index: 0;
 
   &:not(:last-of-type) {
     margin-right: vw(30px);
@@ -38,6 +39,7 @@ export default {
 
   &:hover,
   &:focus {
+    text-decoration: none;
     &::after {
       width: calc(100% + 2px);
     }

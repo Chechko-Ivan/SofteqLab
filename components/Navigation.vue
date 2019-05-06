@@ -1,49 +1,32 @@
 <template>
   <nav class="navigation" role="navigation">
     <ul class="navigation_list">
-      <li class="navigation_item">
-        <nuxt-link class="navigation_link" :to="linkData.firstLink.url">
+      <li
+        v-for="(link, index) in linkData"
+        :key="index"
+        class="navigation_item"
+        data-aos="zoom-out"
+        :data-aos-delay="link.delay"
+      >
+        <nuxt-link class="navigation_link" :to="link.url">
           <div class="navigation_link-box">
             <span class="navigation_link-line navigation_link-line--first"></span>
             <span class="navigation_link-line navigation_link-line--second">
-              <span class="navigation_link-text">{{linkData.firstLink.text}}</span>
-            </span>
-          </div>
-        </nuxt-link>
-      </li>
-      <li class="navigation_item">
-        <nuxt-link class="navigation_link" :to="linkData.secondLink.url">
-          <div class="navigation_link-box">
-            <span class="navigation_link-line navigation_link-line--first"></span>
-            <span class="navigation_link-line navigation_link-line--second">
-              <span class="navigation_link-text">{{linkData.secondLink.text}}</span>
-            </span>
-          </div>
-        </nuxt-link>
-      </li>
-      <li class="navigation_item">
-        <nuxt-link class="navigation_link" :to="linkData.thirdLink.url">
-          <div class="navigation_link-box">
-            <span class="navigation_link-line navigation_link-line--first"></span>
-            <span class="navigation_link-line navigation_link-line--second">
-              <span class="navigation_link-text">{{linkData.thirdLink.text}}</span>
-            </span>
-          </div>
-        </nuxt-link>
-      </li>
-      <li class="navigation_item">
-        <nuxt-link class="navigation_link" :to="linkData.fourthLink.url">
-          <div class="navigation_link-box">
-            <span class="navigation_link-line navigation_link-line--first"></span>
-            <span class="navigation_link-line navigation_link-line--second">
-              <span class="navigation_link-text">{{linkData.fourthLink.text}}</span>
+              <span
+                :class="['navigation_link-text', {'navigation_link-text--active': `${$route.path}` === link.url}]"
+              >{{link.text}}</span>
             </span>
           </div>
         </nuxt-link>
       </li>
 
       <nuxt-link class="logo" to="/">
-        <img src="~/static/logo.png" alt="Логотип SofteqLab">
+        <img
+          src="~/static/logo.png"
+          alt="Логотип SofteqLab"
+          data-aos="zoom-out"
+          data-aos-delay="1900"
+        >
       </nuxt-link>
     </ul>
   </nav>
@@ -53,7 +36,7 @@
 export default {
   props: {
     linkData: {
-      type: Object
+      type: Array
     }
   },
   mounted() {
@@ -222,12 +205,12 @@ export default {
           background-position: center center;
           background-size: 100% 100%, auto;
 
-          @media (max-width: $screen-sm) {
-            width: 15%;
-          }
-
           @media (max-width: $screen-md) {
             width: 20%;
+          }
+
+          @media (max-width: $screen-sm) {
+            width: 15%;
           }
         }
 
@@ -238,12 +221,12 @@ export default {
           width: min-content;
           border-bottom: 1px solid $line;
 
-          @media (max-width: $screen-sm) {
-            right: 15%;
-          }
-
           @media (max-width: $screen-md) {
             right: 20%;
+          }
+
+          @media (max-width: $screen-sm) {
+            right: 15%;
           }
 
           &::after {
@@ -255,12 +238,12 @@ export default {
         &-text {
           bottom: -13px;
 
-          @media (max-width: $screen-sm) {
-            bottom: -7px;
-          }
-
           @media (max-width: $screen-md) {
             bottom: -15px;
+          }
+
+          @media (max-width: $screen-sm) {
+            bottom: 2px;
           }
         }
       }
@@ -324,12 +307,12 @@ export default {
         &-text {
           bottom: -13px;
 
-          @media (max-width: $screen-sm) {
-            bottom: -7px;
-          }
-
           @media (max-width: $screen-md) {
             bottom: -15px;
+          }
+
+          @media (max-width: $screen-sm) {
+            bottom: 2px;
           }
         }
       }
@@ -358,15 +341,15 @@ export default {
           bottom: 59%;
           margin-bottom: -40px;
 
-          @media (max-width: $screen-sm) {
-            bottom: 59%;
-            height: 30px;
-            margin-bottom: -30px;
-          }
-
           @media (max-width: $screen-md) {
             bottom: 72%;
             height: 40px;
+          }
+
+          @media (max-width: $screen-sm) {
+            bottom: 59%;
+            height: 20px;
+            margin-bottom: -20px;
           }
         }
       }
@@ -436,6 +419,12 @@ export default {
       white-space: nowrap;
       text-transform: uppercase;
       letter-spacing: -1px;
+
+      &.navigation_link-text--active {
+        &::after {
+          width: calc(100% + 2px);
+        }
+      }
 
       @media (max-width: $screen-md) {
         font-size: vw(22px);
