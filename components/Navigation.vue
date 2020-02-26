@@ -1,49 +1,32 @@
 <template>
   <nav class="navigation" role="navigation">
     <ul class="navigation_list">
-      <li class="navigation_item">
-        <nuxt-link class="navigation_link" :to="linkData.firstLink.url">
+      <li
+        v-for="(link, index) in linkData"
+        :key="index"
+        class="navigation_item"
+        data-aos="zoom-out"
+        :data-aos-delay="link.delay"
+      >
+        <nuxt-link class="navigation_link" v-scroll-to="'#container'" :to="link.url">
           <div class="navigation_link-box">
             <span class="navigation_link-line navigation_link-line--first"></span>
             <span class="navigation_link-line navigation_link-line--second">
-              <span class="navigation_link-text">{{linkData.firstLink.text}}</span>
-            </span>
-          </div>
-        </nuxt-link>
-      </li>
-      <li class="navigation_item">
-        <nuxt-link class="navigation_link" :to="linkData.secondLink.url">
-          <div class="navigation_link-box">
-            <span class="navigation_link-line navigation_link-line--first"></span>
-            <span class="navigation_link-line navigation_link-line--second">
-              <span class="navigation_link-text">{{linkData.secondLink.text}}</span>
-            </span>
-          </div>
-        </nuxt-link>
-      </li>
-      <li class="navigation_item">
-        <nuxt-link class="navigation_link" :to="linkData.thirdLink.url">
-          <div class="navigation_link-box">
-            <span class="navigation_link-line navigation_link-line--first"></span>
-            <span class="navigation_link-line navigation_link-line--second">
-              <span class="navigation_link-text">{{linkData.thirdLink.text}}</span>
-            </span>
-          </div>
-        </nuxt-link>
-      </li>
-      <li class="navigation_item">
-        <nuxt-link class="navigation_link" :to="linkData.fourthLink.url">
-          <div class="navigation_link-box">
-            <span class="navigation_link-line navigation_link-line--first"></span>
-            <span class="navigation_link-line navigation_link-line--second">
-              <span class="navigation_link-text">{{linkData.fourthLink.text}}</span>
+              <span
+                :class="['navigation_link-text', {'navigation_link-text--active': `${$route.path}` === link.url}]"
+              >{{link.text}}</span>
             </span>
           </div>
         </nuxt-link>
       </li>
 
       <nuxt-link class="logo" to="/">
-        <img src="~/static/logo.png" alt="Логотип SofteqLab">
+        <img
+          src="~/static/logo.svg"
+          alt="Логотип SofteqLab"
+          data-aos="zoom-out"
+          data-aos-delay="1900"
+        >
       </nuxt-link>
     </ul>
   </nav>
@@ -53,7 +36,7 @@
 export default {
   props: {
     linkData: {
-      type: Object
+      type: Array
     }
   },
   mounted() {
@@ -63,6 +46,17 @@ export default {
       el.style.height = `${el.offsetWidth}px`;
     });
   }
+
+  // methods: {
+  //   scrollToContainer() {
+  //     console.log("awdawd");
+  //     let width = document.body.clientWidth;
+  //     if (width < 970) {
+  //       let container = this.$el.querySelector("#container");
+  //       container.scrollTop = container.scrollHeight;
+  //     }
+  //   }
+  // }
 };
 </script>
 
@@ -112,7 +106,7 @@ export default {
           bottom: 0;
           right: 0;
           height: 100%;
-          width: 40%;
+          width: 30%;
           background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M2 0 L0 2 L99 100 L102 99' fill='rgb(189,189,189)' /></svg>");
           background-repeat: no-repeat;
           background-position: center center;
@@ -125,7 +119,7 @@ export default {
 
         &-line--second {
           bottom: 0;
-          right: 40%;
+          right: 30%;
           height: 100%;
           width: min-content;
           border-top: 1px solid $line;
@@ -222,12 +216,12 @@ export default {
           background-position: center center;
           background-size: 100% 100%, auto;
 
-          @media (max-width: $screen-sm) {
-            width: 15%;
-          }
-
           @media (max-width: $screen-md) {
             width: 20%;
+          }
+
+          @media (max-width: $screen-sm) {
+            width: 15%;
           }
         }
 
@@ -238,12 +232,12 @@ export default {
           width: min-content;
           border-bottom: 1px solid $line;
 
-          @media (max-width: $screen-sm) {
-            right: 15%;
-          }
-
           @media (max-width: $screen-md) {
             right: 20%;
+          }
+
+          @media (max-width: $screen-sm) {
+            right: 15%;
           }
 
           &::after {
@@ -255,12 +249,12 @@ export default {
         &-text {
           bottom: -13px;
 
-          @media (max-width: $screen-sm) {
-            bottom: -7px;
-          }
-
           @media (max-width: $screen-md) {
             bottom: -15px;
+          }
+
+          @media (max-width: $screen-sm) {
+            bottom: 2px;
           }
         }
       }
@@ -324,12 +318,12 @@ export default {
         &-text {
           bottom: -13px;
 
-          @media (max-width: $screen-sm) {
-            bottom: -7px;
-          }
-
           @media (max-width: $screen-md) {
             bottom: -15px;
+          }
+
+          @media (max-width: $screen-sm) {
+            bottom: 2px;
           }
         }
       }
@@ -358,15 +352,15 @@ export default {
           bottom: 59%;
           margin-bottom: -40px;
 
-          @media (max-width: $screen-sm) {
-            bottom: 59%;
-            height: 30px;
-            margin-bottom: -30px;
-          }
-
           @media (max-width: $screen-md) {
             bottom: 72%;
             height: 40px;
+          }
+
+          @media (max-width: $screen-sm) {
+            bottom: 59%;
+            height: 20px;
+            margin-bottom: -20px;
           }
         }
       }
@@ -385,7 +379,15 @@ export default {
     &:hover,
     &:focus {
       &::after {
-        box-shadow: 0 0 0 vh(15px) rgba($accent-hover, 0.3);
+        box-shadow: 0 0 0 15px rgba($accent-hover, 0.3);
+
+        @media (max-width: 1440px) {
+          box-shadow: 0 0 0 10px rgba($accent-hover, 0.3);
+        }
+
+        @media (max-width: 1440px) {
+          box-shadow: 0 0 0 8px rgba($accent-hover, 0.3);
+        }
       }
 
       .navigation_link-text {
@@ -400,10 +402,18 @@ export default {
       position: absolute;
       width: 112%;
       height: 112%;
-      border: vh(30px) solid $accent-light;
+      border: 30px solid $accent-light;
       border-radius: 50%;
       background-color: transparent;
       transition: box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.75);
+
+      @media (max-width: 1440px) {
+        border: 20px solid $accent-light;
+      }
+
+      @media (max-width: 1170px) {
+        border: 18px solid $accent-light;
+      }
     }
 
     // Link box
@@ -437,6 +447,12 @@ export default {
       text-transform: uppercase;
       letter-spacing: -1px;
 
+      &.navigation_link-text--active {
+        &::after {
+          width: calc(100% + 2px);
+        }
+      }
+
       @media (max-width: $screen-md) {
         font-size: vw(22px);
         letter-spacing: -0.5px;
@@ -466,11 +482,15 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -65%);
   outline: none;
 
   img {
-    width: vh(175px);
+    width: vw(175px);
+
+    @media (max-width: $screen-md) {
+      width: 100px;
+    }
   }
 }
 </style>

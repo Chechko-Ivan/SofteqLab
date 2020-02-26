@@ -1,17 +1,17 @@
 <template>
   <main class="inner-page">
     <div class="inner-page_wrapper">
-      <!-- <span class="inner-page_big-title">Кто мы</span> -->
+      <div class="inner-page_big-title" data-aos="zoom-out" data-aos-delay="500">Кто мы</div>
       <div class="inner-page_header">
-        <breadcrumbs></breadcrumbs>
-        <div class="inner-page_main-title-wrapper">
-          <div class="inner-page_main-title-decor" data-aos="slide-right"></div>
+        <breadcrumbs :crumbsList="breadcrumbs"></breadcrumbs>
+        <!-- <div class="inner-page_main-title-wrapper">
+          <div class="inner-page_main-title-decor" data-aos="fade-right" data-aos-delay="100"></div>
           <h1
             class="inner-page_main-title"
             data-aos="zoom-out-left"
             data-aos-delay="150"
           >КАКОЙ-ТО ЧЕТКИЙ ЗАГОЛОВОК ОБ УСЛУГЕ ИЛИ ДАННОМ РАЗДЕЛЕ</h1>
-        </div>
+        </div>-->
       </div>
 
       <div class="inner-page_content">
@@ -21,15 +21,15 @@
               class="inner-page_content-header-text"
               data-aos="zoom-out-left"
               data-aos-delay="250"
-            >We will build a new medium that will redefine and enhance the nature of spoken information, education, entertainment, and other modes of verbal expression we will help create ourselves.</p>
-            <address
+            >Компания “Софтек Лаб” - системный интегратор, поставщик ИТ-решений и услуг для корпоративного сектора.</p>
+            <!-- <address
               class="inner-page_content-header-author"
               data-aos="zoom-out-left"
               data-aos-delay="300"
-            >DON KATZ, FOUNDER AND CEO, AUDIBLE JULY 30, 1996</address>
-            <div class="inner-page_content-header_link">
-              <base-link url="/" text="Услуги" data-aos="zoom-in" data-aos-delay="550"></base-link>
-              <base-link url="/" text="Обратная связь" data-aos="zoom-in" data-aos-delay="650"></base-link>
+            >DON KATZ, FOUNDER AND CEO, AUDIBLE JULY 30, 1996</address>-->
+            <div class="inner-page_content-header_link" data-aos="zoom-in" data-aos-delay="550">
+              <base-link url="/services" text="Услуги"></base-link>
+              <base-link url="/feedback" text="Обратная связь"></base-link>
             </div>
           </div>
 
@@ -37,27 +37,36 @@
             <div class="inner-page_content-main-wrapper">
               <div class="inner-page-about_left">
                 <h2 class="inner-page-about-title">
-                  <div class="inner-page_main-title-decor"></div>
-                  <span data-aos="fade-up" data-aos-delay="700">НАША ПРОДУКЦИЯ</span>
-                  <div data-aos="fade-up" data-aos-delay="750">КАЧЕСТВО</div>
+                  <div
+                    class="inner-page_main-title-decor"
+                    data-aos="fade-right"
+                    data-aos-delay="650"
+                  ></div>
+                  <span data-aos="fade-up" data-aos-delay="700">Наш подход</span>
+                  <!-- <div data-aos="fade-up" data-aos-delay="750">КАЧЕСТВО</div> -->
                 </h2>
                 <p
                   class="inner-page_content-header-text"
                   data-aos="fade-up"
                   data-aos-delay="800"
-                >We will build a new medium that will redefine and enhance the nature of spoken information, education, entertainment, and other modes of verbal expression we will help create ourselves.</p>
-                <address
+                >Профессиональное видение, опыт работы наших консультантов на управляющих должностях предприятий реального и финансового секторов экономики, понимание специфических потребностей и бизнес-задач в совокупности с пониманием узкой специфики различных отраслей, помогают предлагать для наших Заказчиков структурированные программные решения в сочетании с выработанной проектной методологией внедрения для достижения задач развития бизнеса и оптимизации процессов управления.</p>
+                <!-- <address
                   class="inner-page_content-header-author"
                   data-aos="fade-up"
                   data-aos-delay="950"
-                >DON KATZ, FOUNDER AND CEO, AUDIBLE JULY 30, 1996</address>
+                >DON KATZ, FOUNDER AND CEO, AUDIBLE JULY 30, 1996</address>-->
               </div>
 
               <div class="inner-page-about_right">
-                <div
+                <p
+                  class="inner-page_content-header-text"
+                  data-aos="fade-up"
+                  data-aos-delay="800"
+                >Уникальный опыт сотрудничающих с нами архитекторов информационных систем уровня senior architect и наших разработчиков уровня middle dev. и senior dev. позволяют в сжатые сроки осуществлять разработку нестандартных программно-аппаратных решений, соответствующих требованиям отказоустойчивости, производительности и информационной безопасности.</p>
+                <!-- <div
                   class="inner-page-about_preview"
                   :style="`background-image: url(${aboutImage});`"
-                ></div>
+                ></div>-->
               </div>
             </div>
           </div>
@@ -78,7 +87,19 @@ export default {
   },
   data() {
     return {
-      aboutImage
+      aboutImage,
+      breadcrumbs: [
+        // {
+        //   text: "На главную",
+        //   link: "/",
+        //   delay: "1600"
+        // },
+        {
+          text: "О нас",
+          link: null,
+          delay: "1600"
+        }
+      ]
     };
   }
 };
@@ -92,7 +113,8 @@ export default {
 .inner-page {
   &_big-title {
     position: absolute;
-    top: vh(130px);
+    line-height: 0;
+    top: vh(200px);
     left: 0;
     font-weight: 800;
     font-size: 175px;
@@ -106,12 +128,25 @@ export default {
 
     @media (max-width: $screen-sm) {
       font-size: 100px;
-      white-space: normal;
+      // white-space: normal;
     }
+  }
+
+  .inner-page_content_scroll {
+    padding-bottom: 50px;
+  }
+
+  &_wrapper {
+    overflow: hidden;
+    position: relative;
   }
 
   &_header {
     margin-left: vw(175px);
+
+    @media (max-width: $screen-sm) {
+      margin-left: vw(100px);
+    }
   }
 
   &_main-title-wrapper {
@@ -213,10 +248,22 @@ export default {
     }
   }
 
+  &_content-list {
+    margin: vh(50px) auto vh(30px) auto;
+    max-width: 80%;
+    width: 100%;
+    padding: 0 10px;
+  }
+
   &_content-header-text {
     color: #464646;
     font-size: 14px;
     font-weight: 300;
+    text-align: justify;
+
+    &:not(:last-of-type) {
+      margin-bottom: 15px;
+    }
 
     @media (max-width: $screen-sm) {
       font-size: 12px;
@@ -249,6 +296,10 @@ export default {
       width: 100%;
       padding: 0 10px;
       margin: 0 auto;
+
+      @media (max-width: $screen-sm) {
+        max-width: 95%;
+      }
     }
   }
 
@@ -256,7 +307,7 @@ export default {
     .inner-page_content-main-wrapper {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      // align-items: center;
 
       @media (max-width: $screen-xl) {
         flex-direction: column;
@@ -268,6 +319,10 @@ export default {
 
       @media (max-width: $screen-md) {
         flex-direction: column;
+      }
+
+      .inner-page_content-header-text {
+        text-align: justify;
       }
     }
 
@@ -286,8 +341,8 @@ export default {
         max-width: 300px;
       }
 
-      @media (max-width: $screen-md) {
-        /* max-width: ; */
+      @media (max-width: $screen-lg) {
+        max-width: 100%;
       }
     }
 
@@ -303,11 +358,32 @@ export default {
   margin-top: vh(65px);
 
   &_left {
-    width: 50%;
+    width: 48%;
 
     @media (max-width: $screen-xl) {
       width: 100%;
-      margin-bottom: vh(100px);
+      margin-bottom: vh(20px);
+    }
+  }
+
+  &_right {
+    padding-top: vh(35px);
+    width: 48%;
+
+    @media (max-width: $screen-xl) {
+      width: 100%;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    @media (max-width: $screen-lg) {
+      width: 100%;
+      margin-top: 0;
+      padding-top: vh(90px);
+    }
+
+    @media (max-width: $screen-md) {
+      padding-top: 0;
     }
   }
 
@@ -315,12 +391,16 @@ export default {
     position: relative;
     font-size: vw(51px);
     font-weight: 800;
-    color: $text-dark;
+    // color: $text-dark;
     text-transform: uppercase;
     padding-left: vw(30px);
 
     @media (max-width: $screen-xl) {
       font-size: 30px;
+    }
+
+    @media (max-width: $screen-sm) {
+      padding-left: 30px;
     }
 
     .inner-page_main-title-decor {
@@ -332,8 +412,7 @@ export default {
 
       @media (max-width: $screen-sm) {
         width: 25px;
-
-        left: -30px;
+        left: -10px;
       }
 
       &::after {
@@ -344,16 +423,18 @@ export default {
         }
 
         @media (max-width: $screen-sm) {
-          transform: translateY(-55%);
+          transform: translateY(-45%);
         }
       }
     }
 
     span {
-      font-size: 17px;
+      margin-bottom: vh(25px);
+      font-size: 15px;
       font-weight: 400;
       letter-spacing: 2px;
       display: block;
+      text-transform: initial;
 
       @media (max-width: $screen-xl) {
         font-size: 12px;
@@ -388,11 +469,24 @@ export default {
       position: absolute;
       width: 100%;
       height: 100%;
-      top: vh(-30px);
-      right: vw(-65px);
+      top: 0;
+      right: 0;
       background-image: $gradient;
       z-index: -1;
+      animation-delay: 1s;
+      animation-name: animateImageAbout;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
     }
+  }
+}
+
+@keyframes animateImageAbout {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(vw(65px), vh(-30px));
   }
 }
 </style>

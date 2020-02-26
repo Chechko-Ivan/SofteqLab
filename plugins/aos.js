@@ -3,6 +3,8 @@ import "aos/dist/aos.css";
 
 export default ({ app }) => {
   app.AOS = new AOS.init({
-    disable: "phone"
+    disable: "phone",
+    offset: -20000,
+    once: true
   });
 };

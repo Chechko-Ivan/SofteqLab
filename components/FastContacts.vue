@@ -3,7 +3,11 @@
     <div class="fast-contacts_wrapper">
       <ul class="fast-contacts_list">
         <li class="fast-contacts_item">
-          <div class="fast-contacts_item-left">
+          <div
+            class="fast-contacts_item-left"
+            data-aos="fade"
+            data-aos-delay="400"
+          >
             <svg
               class="fast-contacts_icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -16,16 +20,26 @@
               ></path>
             </svg>
           </div>
-          <div class="fast-contacts_item-right">
-            <h4 class="fast-contacts_item-title">Visit us</h4>
+          <div
+            class="fast-contacts_item-right"
+            data-aos="fade-up"
+            data-aos-delay="450"
+          >
+            <h4 class="fast-contacts_item-title">Адрес</h4>
             <span class="fast-contacts_item-text">
-              <nuxt-link to="/">123 Manhattan address name, Los Algeles</nuxt-link>
+              <nuxt-link to="/">
+                220053, г.Минск, Старовиленский тракт 87, офис 117
+              </nuxt-link>
             </span>
           </div>
         </li>
 
         <li class="fast-contacts_item">
-          <div class="fast-contacts_item-left">
+          <div
+            class="fast-contacts_item-left"
+            data-aos="fade"
+            data-aos-delay="500"
+          >
             <svg
               class="fast-contacts_icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -38,17 +52,27 @@
               ></path>
             </svg>
           </div>
-          <div class="fast-contacts_item-right">
-            <h4 class="fast-contacts_item-title">Phone</h4>
+          <div
+            class="fast-contacts_item-right"
+            data-aos="fade-up"
+            data-aos-delay="550"
+          >
+            <h4 class="fast-contacts_item-title">Телефон</h4>
             <span class="fast-contacts_item-text">
-              Phone :
-              <a href="tel:+(012) 345 6789">(012) 345 6789</a>
+              <a href="tel:+375293122993">+ 375 (29) 312-29-93</a>
+            </span>
+            <span class="fast-contacts_item-text">
+              <a href="tel:+375296222469">+ 375 (29) 622-24-69</a>
             </span>
           </div>
         </li>
 
         <li class="fast-contacts_item">
-          <div class="fast-contacts_item-left">
+          <div
+            class="fast-contacts_item-left"
+            data-aos="fade"
+            data-aos-delay="600"
+          >
             <svg
               class="fast-contacts_icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -61,10 +85,13 @@
               ></path>
             </svg>
           </div>
-          <div class="fast-contacts_item-right">
-            <h4 class="fast-contacts_item-title">Work with us?</h4>
+          <div
+            class="fast-contacts_item-right"
+            data-aos="fade-up"
+            data-aos-delay="650"
+          >
+            <h4 class="fast-contacts_item-title">Email</h4>
             <span class="fast-contacts_item-text">
-              Email :
               <a href="mailto:info@softeqlab.by">info@softeqlab.by</a>
             </span>
           </div>
@@ -160,6 +187,10 @@ export default {};
     @media (max-width: $screen-xxl) {
       font-size: 12px;
       margin-top: vh(10px);
+    }
+
+    @media (max-width: $screen-osx) {
+      font-size: 11px;
     }
 
     @media (max-width: $screen-xl) {
