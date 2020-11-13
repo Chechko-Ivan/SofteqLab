@@ -8,7 +8,11 @@
         data-aos="zoom-out"
         :data-aos-delay="link.delay"
       >
+<<<<<<< HEAD
         <nuxt-link class="navigation_link" v-scroll-to="'#container'" :to="link.url">
+=======
+        <nuxt-link class="navigation_link" :to="link.url">
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
           <div class="navigation_link-box">
             <span class="navigation_link-line navigation_link-line--first"></span>
             <span class="navigation_link-line navigation_link-line--second">
@@ -22,7 +26,11 @@
 
       <nuxt-link class="logo" to="/">
         <img
+<<<<<<< HEAD
           src="~/static/logo.svg"
+=======
+          src="~/static/logo.png"
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
           alt="Логотип SofteqLab"
           data-aos="zoom-out"
           data-aos-delay="1900"

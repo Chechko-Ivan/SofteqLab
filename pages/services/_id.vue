@@ -1,7 +1,7 @@
 <template>
   <main class="inner-page">
     <div class="inner-page_wrapper">
-      <div class="inner-page_big-title" data-aos="zoom-out" data-aos-delay="500">Обратная связь</div>
+      <div class="inner-page_big-title" data-aos="zoom-out" data-aos-delay="500">Услуги</div>
       <div class="inner-page_header">
         <breadcrumbs :crumbsList="breadcrumbs"></breadcrumbs>
         <div class="inner-page_main-title-wrapper">
@@ -10,40 +10,23 @@
             class="inner-page_main-title"
             data-aos="zoom-out-left"
             data-aos-delay="150"
-<<<<<<< HEAD
-          >Узнайте больше о предлагаемых продуктах и услугах</h1>
-=======
           >КАКОЙ-ТО ЧЕТКИЙ ЗАГОЛОВОК ОБ УСЛУГЕ ИЛИ ДАННОМ РАЗДЕЛЕ</h1>
->>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
         </div>
       </div>
 
       <div class="inner-page_content">
         <div class="inner-page_content_scroll">
-<<<<<<< HEAD
-          <!-- <div class="inner-page_content-header">
-=======
           <div class="inner-page_content-header">
->>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
             <p
               class="inner-page_content-header-text"
               data-aos="zoom-out-left"
               data-aos-delay="250"
-            >We will build a new medium that will redefine and enhance the nature of spoken information, education, entertainment, and other modes of verbal expression we will help create ourselves.</p>
-            <address
-              class="inner-page_content-header-author"
-              data-aos="zoom-out-left"
-              data-aos-delay="300"
-            >DON KATZ, FOUNDER AND CEO, AUDIBLE JULY 30, 1996</address>
-<<<<<<< HEAD
-          </div>-->
-=======
+            >We will build a new medium that will redefine and enhance the nature of spoken information.</p>
           </div>
->>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
 
-          <div class="inner-page_content-main inner-page-feedback">
+          <div class="inner-page_content-main inner-page-services">
             <div class="inner-page_content-main-wrapper">
-              <base-form></base-form>
+              <img src="~static/servicesImg.png" alt="servieses">
             </div>
           </div>
         </div>
@@ -55,13 +38,11 @@
 <script>
 import Breadcrumbs from "~/components/Breadcrumbs";
 import BaseLink from "~/components/BaseLink";
-import BaseForm from "~/components/BaseForm";
 
 export default {
   components: {
     Breadcrumbs,
-    BaseLink,
-    BaseForm
+    BaseLink
   },
   data() {
     return {
@@ -72,9 +53,37 @@ export default {
           delay: "1600"
         },
         {
-          text: "Обратная связь",
-          link: null,
+          text: "Услуги",
+          link: "/services",
           delay: "1800"
+        },
+        {
+          text: `Услуга номер ${this.$route.params.id}`,
+          link: null,
+          delay: "2000"
+        }
+      ],
+      servicesList: [
+        {
+          title: "СИСТЕМА АВТОМАТИЗАЦИИ",
+          subtitle:
+            "We will build a new medium that will redefine and enhance the nature of spoken information",
+          link: "/services/1",
+          delay: "400"
+        },
+        {
+          title: "СИСТЕМА ВЕНТИЛЯЦИИ",
+          subtitle:
+            "We will build a new medium that will redefine and enhance the nature of spoken information",
+          link: "/services/2",
+          delay: "500"
+        },
+        {
+          title: "СИСТЕМА ПЕРСОНАЛИЗАЦИИ",
+          subtitle:
+            "We will build a new medium that will redefine and enhance the nature of spoken information",
+          link: "/services/3",
+          delay: "600"
         }
       ]
     };
@@ -82,8 +91,5 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "~/assets/scss/_colors.scss";
-@import "~/assets/scss/_function.scss";
-@import "~/assets/scss/_breakpoint.scss";
+<style lang="scss" scoped>
 </style>

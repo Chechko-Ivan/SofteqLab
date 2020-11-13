@@ -4,7 +4,11 @@
       <div class="inner-page_big-title" data-aos="zoom-out" data-aos-delay="500">Услуги</div>
       <div class="inner-page_header">
         <breadcrumbs :crumbsList="breadcrumbs"></breadcrumbs>
+<<<<<<< HEAD
         <!-- <div class="inner-page_main-title-wrapper">
+=======
+        <div class="inner-page_main-title-wrapper">
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
           <div class="inner-page_main-title-decor" data-aos="fade-right" data-aos-delay="100"></div>
           <h1
             class="inner-page_main-title"
@@ -17,6 +21,7 @@
       <div class="inner-page_content">
         <div class="inner-page_content_scroll">
           <div class="inner-page_content-header">
+<<<<<<< HEAD
             <div data-aos="zoom-out-left" data-aos-delay="250">
               <p
                 class="inner-page_content-header-text"
@@ -38,23 +43,40 @@
                 class="inner-page_content-header-text"
               >Нотации моделирования бизнес-процессов, используемые нами для описания бизнес-процессов: UML, BPMN 2.0.</p>
             </div>
+=======
+            <p
+              class="inner-page_content-header-text"
+              data-aos="zoom-out-left"
+              data-aos-delay="250"
+            >We will build a new medium that will redefine and enhance the nature of spoken information.</p>
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
           </div>
 
           <div class="inner-page_content-main inner-page-services">
             <div class="inner-page_content-main-wrapper">
               <ul class="inner-page-services_list">
                 <li
+<<<<<<< HEAD
                   :class="['inner-page-services_item', {'no-active' : !service.isActive}]"
+=======
+                  class="inner-page-services_item"
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
                   v-for="(service, index) in servicesList"
                   :key="index"
                   data-aos="zoom-out"
                   :data-aos-delay="service.delay"
+<<<<<<< HEAD
                   data-aos-offset="-1000"
                 >
                   <nuxt-link
                     class="inner-page-services_item-link"
                     :to="service.isActive ? service.link : ''"
                   >
+=======
+                  data-aos-offset="0"
+                >
+                  <nuxt-link class="inner-page-services_item-link" :to="service.link">
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
                     <div class="inner-page-services_item-left">
                       <h3 class="inner-page-services_item-title">{{service.title}}</h3>
                       <span class="inner-page-services_item-subtitle">{{service.subtitle}}</span>
@@ -100,6 +122,7 @@ export default {
         }
       ],
       servicesList: [
+<<<<<<< HEAD
         // Внедрение ERP-системы
         {
           title: "Внедрение ERP-системы",
@@ -144,6 +167,28 @@ export default {
           link: "/services/sale-programs",
           isActive: false,
           delay: "700"
+=======
+        {
+          title: "СИСТЕМА АВТОМАТИЗАЦИИ",
+          subtitle:
+            "We will build a new medium that will redefine and enhance the nature of spoken information",
+          link: "/services/1",
+          delay: "400"
+        },
+        {
+          title: "СИСТЕМА ВЕНТИЛЯЦИИ",
+          subtitle:
+            "We will build a new medium that will redefine and enhance the nature of spoken information",
+          link: "/services/2",
+          delay: "500"
+        },
+        {
+          title: "СИСТЕМА ПЕРСОНАЛИЗАЦИИ",
+          subtitle:
+            "We will build a new medium that will redefine and enhance the nature of spoken information",
+          link: "/services/3",
+          delay: "600"
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
         }
       ]
     };
@@ -194,6 +239,7 @@ export default {
       margin-bottom: 20px;
     }
 
+<<<<<<< HEAD
     &.no-active {
       &:hover,
       &:focus {
@@ -223,6 +269,8 @@ export default {
       }
     }
 
+=======
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
     &:hover,
     &:focus {
       background-image: linear-gradient(to bottom, #85deff 0%, #0cb3f0 100%);
@@ -275,7 +323,10 @@ export default {
       font-weight: 300;
       line-height: 22px;
       transition: color 0.25s ease;
+<<<<<<< HEAD
       // text-align: justify;
+=======
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
 
       @media (max-width: $screen-sm) {
         margin-top: 15px;
@@ -316,6 +367,7 @@ export default {
     }
   }
 }
+<<<<<<< HEAD
 
 .inner-page.services {
   .inner-page_content-header {
@@ -336,4 +388,6 @@ export default {
     }
   }
 }
+=======
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
 </style>

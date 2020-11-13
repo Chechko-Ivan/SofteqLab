@@ -69,7 +69,10 @@
         </div>
       </div>
       <span class="form_submit">
+<<<<<<< HEAD
         <span v-if="isSuccess" data-aos="fade">Сообщение отправлено!</span>
+=======
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
         <button v-on:click.prevent="submitForm" class="base-button" type="submit">Отправить</button>
       </span>
     </div>
@@ -85,8 +88,12 @@ export default {
       companyName: "",
       tel: "",
       email: "",
+<<<<<<< HEAD
       message: "",
       isSuccess: false
+=======
+      message: ""
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
     };
   },
   methods: {
@@ -104,7 +111,10 @@ export default {
       };
       fetch("./mail.php", options).then(res => {
         console.log(res);
+<<<<<<< HEAD
         this.isSuccess = true;
+=======
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
       });
     }
   }
@@ -126,7 +136,10 @@ export default {
   text-transform: uppercase;
   text-decoration: none;
   z-index: 0;
+<<<<<<< HEAD
   cursor: pointer;
+=======
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
 
   &:not(:last-of-type) {
     margin-right: vw(30px);
@@ -233,6 +246,7 @@ export default {
   &_submit {
     margin-top: 25px;
     display: flex;
+<<<<<<< HEAD
     justify-content: space-between;
 
     button {
@@ -252,6 +266,9 @@ export default {
       font-size: 10px;
     }
     }
+=======
+    justify-content: flex-end;
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
   }
 }
 

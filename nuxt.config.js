@@ -21,6 +21,7 @@ module.exports = {
    */
   head: {
     title: "Softeq Lab",
+<<<<<<< HEAD
     htmlAttrs: {
       lang: "ru",
       prefix: "og: http://ogp.me/ns#"
@@ -56,6 +57,12 @@ module.exports = {
         content:
           "Компания “Софтек Лаб” - системный интегратор, разработчик ПО, поставщик ИТ-решений и услуг для корпоративного сектора"
       }
+=======
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "SofteqLab" }
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
     ],
     link: [
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
@@ -112,8 +119,12 @@ module.exports = {
   },
   plugins: [
     { src: "~/plugins/aos", ssr: false },
+<<<<<<< HEAD
     { src: "~/plugins/mdField.js" },
     { src: "~/plugins/vue-scrollto.js" }
+=======
+    { src: "~/plugins/mdField.js" }
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
   ],
   css: ["aos/dist/aos.css", "vue-material/dist/vue-material.min.css"]
 };

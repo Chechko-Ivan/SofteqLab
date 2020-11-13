@@ -3,11 +3,15 @@
     <div class="fast-contacts_wrapper">
       <ul class="fast-contacts_list">
         <li class="fast-contacts_item">
+<<<<<<< HEAD
           <div
             class="fast-contacts_item-left"
             data-aos="fade"
             data-aos-delay="400"
           >
+=======
+          <div class="fast-contacts_item-left" data-aos="fade" data-aos-delay="400">
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
             <svg
               class="fast-contacts_icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -20,12 +24,17 @@
               ></path>
             </svg>
           </div>
+<<<<<<< HEAD
           <div
             class="fast-contacts_item-right"
             data-aos="fade-up"
             data-aos-delay="450"
           >
             <h4 class="fast-contacts_item-title">Адрес</h4>
+=======
+          <div class="fast-contacts_item-right" data-aos="fade-up" data-aos-delay="450">
+            <h4 class="fast-contacts_item-title">Visit us</h4>
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
             <span class="fast-contacts_item-text">
               <nuxt-link to="/">
                 220053, г.Минск, Старовиленский тракт 87, офис 117
@@ -35,11 +44,15 @@
         </li>
 
         <li class="fast-contacts_item">
+<<<<<<< HEAD
           <div
             class="fast-contacts_item-left"
             data-aos="fade"
             data-aos-delay="500"
           >
+=======
+          <div class="fast-contacts_item-left" data-aos="fade" data-aos-delay="500">
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
             <svg
               class="fast-contacts_icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -52,12 +65,17 @@
               ></path>
             </svg>
           </div>
+<<<<<<< HEAD
           <div
             class="fast-contacts_item-right"
             data-aos="fade-up"
             data-aos-delay="550"
           >
             <h4 class="fast-contacts_item-title">Телефон</h4>
+=======
+          <div class="fast-contacts_item-right" data-aos="fade-up" data-aos-delay="550">
+            <h4 class="fast-contacts_item-title">Phone</h4>
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
             <span class="fast-contacts_item-text">
               <a href="tel:+375293122993">+ 375 (29) 312-29-93</a>
             </span>
@@ -68,11 +86,15 @@
         </li>
 
         <li class="fast-contacts_item">
+<<<<<<< HEAD
           <div
             class="fast-contacts_item-left"
             data-aos="fade"
             data-aos-delay="600"
           >
+=======
+          <div class="fast-contacts_item-left" data-aos="fade" data-aos-delay="600">
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
             <svg
               class="fast-contacts_icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -85,12 +107,17 @@
               ></path>
             </svg>
           </div>
+<<<<<<< HEAD
           <div
             class="fast-contacts_item-right"
             data-aos="fade-up"
             data-aos-delay="650"
           >
             <h4 class="fast-contacts_item-title">Email</h4>
+=======
+          <div class="fast-contacts_item-right" data-aos="fade-up" data-aos-delay="650">
+            <h4 class="fast-contacts_item-title">Work with us?</h4>
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
             <span class="fast-contacts_item-text">
               <a href="mailto:info@softeqlab.by">info@softeqlab.by</a>
             </span>

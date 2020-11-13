@@ -3,12 +3,21 @@
     <div class="page_wrapper">
       <aside class="page_navigation">
         <div class="page_navigation-wrapper">
+<<<<<<< HEAD
           <navigation
             :linkData="$route.params.category || $route.params.id ? servicesNavigation : currentNavigation"
           ></navigation>
           <span class="page_navigation_contact-box">
             <div data-aos="zoom-out" data-aos-delay="500">
               <h2 class="page_navigation_title">Свяжитесь с нами</h2>
+=======
+          <navigation :linkData="$route.params.id ? servicesNavigation : currentNavigation"></navigation>
+          <span class="page_navigation_contact-box">
+            <div data-aos="zoom-out" data-aos-delay="500">
+              <h2
+                class="page_navigation_title"
+              >КАКОЙ-ТО ЧЕТКИЙ ЗАГОЛОВОК ОБ УСЛУГЕ ИЛИ ДАННОМ РАЗДЕЛЕ</h2>
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
             </div>
 
             <fast-contacts></fast-contacts>
@@ -64,6 +73,7 @@ export default {
       ],
       servicesNavigation: [
         {
+<<<<<<< HEAD
           text: "ERP-системы",
           url: "/services/ERP",
           delay: "1050"
@@ -84,6 +94,25 @@ export default {
           text: "Продажа ПО",
           // url: "/services/продажа программ",
           url: "/services",
+=======
+          text: "Услуга 1",
+          url: "/services/1",
+          delay: "1050"
+        },
+        {
+          text: "Услуга 2",
+          url: "/services/2",
+          delay: "1250"
+        },
+        {
+          text: "Услуга 4",
+          url: "/services/4",
+          delay: "1450"
+        },
+        {
+          text: "Услуга 3",
+          url: "/services/3",
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
           delay: "1650"
         }
       ]

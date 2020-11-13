@@ -4,7 +4,11 @@
       <div class="inner-page_big-title" data-aos="zoom-out" data-aos-delay="500">Кто мы</div>
       <div class="inner-page_header">
         <breadcrumbs :crumbsList="breadcrumbs"></breadcrumbs>
+<<<<<<< HEAD
         <!-- <div class="inner-page_main-title-wrapper">
+=======
+        <div class="inner-page_main-title-wrapper">
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
           <div class="inner-page_main-title-decor" data-aos="fade-right" data-aos-delay="100"></div>
           <h1
             class="inner-page_main-title"
@@ -26,10 +30,22 @@
               class="inner-page_content-header-author"
               data-aos="zoom-out-left"
               data-aos-delay="300"
+<<<<<<< HEAD
             >DON KATZ, FOUNDER AND CEO, AUDIBLE JULY 30, 1996</address>-->
             <div class="inner-page_content-header_link" data-aos="zoom-in" data-aos-delay="550">
               <base-link url="/services" text="Услуги"></base-link>
               <base-link url="/feedback" text="Обратная связь"></base-link>
+=======
+            >DON KATZ, FOUNDER AND CEO, AUDIBLE JULY 30, 1996</address>
+            <div class="inner-page_content-header_link">
+              <base-link url="/services" text="Услуги" data-aos="zoom-in" data-aos-delay="550"></base-link>
+              <base-link
+                url="/feedback"
+                text="Обратная связь"
+                data-aos="zoom-in"
+                data-aos-delay="650"
+              ></base-link>
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
             </div>
           </div>
 
@@ -42,8 +58,13 @@
                     data-aos="fade-right"
                     data-aos-delay="650"
                   ></div>
+<<<<<<< HEAD
                   <span data-aos="fade-up" data-aos-delay="700">Наш подход</span>
                   <!-- <div data-aos="fade-up" data-aos-delay="750">КАЧЕСТВО</div> -->
+=======
+                  <span data-aos="fade-up" data-aos-delay="700">НАША ПРОДУКЦИЯ</span>
+                  <div data-aos="fade-up" data-aos-delay="750">КАЧЕСТВО</div>
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
                 </h2>
                 <p
                   class="inner-page_content-header-text"
@@ -132,10 +153,13 @@ export default {
     }
   }
 
+<<<<<<< HEAD
   .inner-page_content_scroll {
     padding-bottom: 50px;
   }
 
+=======
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
   &_wrapper {
     overflow: hidden;
     position: relative;
@@ -430,7 +454,11 @@ export default {
 
     span {
       margin-bottom: vh(25px);
+<<<<<<< HEAD
       font-size: 15px;
+=======
+      font-size: 17px;
+>>>>>>> 4490a6bf788ee8d38e153acedbab535e4e8312a8
       font-weight: 400;
       letter-spacing: 2px;
       display: block;
